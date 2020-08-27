@@ -111,39 +111,6 @@ export default function ProjectManager() {
       '$1250',
       true
     ),
-    createData(
-      'Albert Einstein',
-      '2/13/19',
-      'Mobile App',
-      'Photo/Video, File Transfer, Users/Authentication',
-      'Low',
-      'Android',
-      '10-100',
-      '$1250',
-      true
-    ),
-    createData(
-      'Albert Einstein',
-      '2/13/19',
-      'Mobile App',
-      'Photo/Video, File Transfer, Users/Authentication',
-      'Low',
-      'Android',
-      '10-100',
-      '$1250',
-      true
-    ),
-    createData(
-      'Albert Einstein',
-      '2/13/19',
-      'Mobile App',
-      'Photo/Video, File Transfer, Users/Authentication',
-      'Low',
-      'Android',
-      '10-100',
-      '$1250',
-      true
-    ),
   ]);
 
   const platformOptions = ['Web', 'iOS', 'Android'];
@@ -337,7 +304,7 @@ export default function ProjectManager() {
   );
 
   return (
-    <MuiPickersUtilsProvider utils={DateFnsUtils}>
+    <MuiPickersUtilsProvider utils={DateFnsUtils} style={{ zindex: 20 }}>
       <Grid container direction="column" alignItems={matchesSM ? 'center' : undefined}>
         <Grid item style={{ marginTop: '2em', marginLeft: matchesSM ? 0 : '5em' }}>
           <Typography variant="h1">Projects</Typography>
@@ -439,7 +406,7 @@ export default function ProjectManager() {
           maxWidth="md"
           open={dialogOpen}
           fullScreen={matchesSM}
-          style={{ zIndex: 1302 }}
+          style={{ zIndex: 12 }}
           onClose={() => setDialogOpen(false)}
         >
           <Grid container justify="center">
