@@ -1,17 +1,17 @@
 import { createMuiTheme } from '@material-ui/core/styles';
 
-const arcBlue = '#0B72B9';
-const arcOrange = '#FFBA60';
+const pink = '##AD1457';
+const arcOrange = '##006064';
 const arcGrey = '#868686';
 
 export default createMuiTheme({
   palette: {
     common: {
-      blue: arcBlue,
+      blue: pink,
       orange: arcOrange,
     },
     primary: {
-      main: arcBlue,
+      main: pink,
     },
     secondary: {
       main: arcOrange,
@@ -35,24 +35,24 @@ export default createMuiTheme({
       fontFamily: 'Raleway',
       fontWeight: 700,
       fontSize: '2.5rem',
-      color: arcBlue,
+      color: pink,
       lineHeight: 1.5,
     },
     h3: {
       fontFamily: 'Pacifico',
       fontSize: '2.5rem',
-      color: arcBlue,
+      color: pink,
     },
     h4: {
       fontFamily: 'Raleway',
       fontSize: '1.75rem',
-      color: arcBlue,
+      color: pink,
       fontWeight: 700,
     },
     h6: {
       fontWeight: 500,
       fontFamily: 'Raleway',
-      color: arcBlue,
+      color: pink,
     },
     subtitle1: {
       fontSize: '1.25rem',
@@ -75,10 +75,10 @@ export default createMuiTheme({
       color: arcGrey,
     },
     learnButton: {
-      borderColor: arcBlue,
+      borderColor: pink,
       borderWidth: 2,
       textTransform: 'none',
-      color: arcBlue,
+      color: pink,
       borderRadius: 50,
       fontFamily: 'Roboto',
       fontWeight: 'bold',
@@ -89,13 +89,13 @@ export default createMuiTheme({
       head: {
         fontSize: '1rem',
         fontWeight: 700,
-        color: arcBlue,
-        borderColor: arcBlue,
+        color: pink,
+        borderColor: pink,
         borderWidth: 2,
       },
       body: {
         color: arcGrey,
-        borderColor: arcBlue,
+        borderColor: pink,
         borderWidth: 2,
       },
     },
@@ -121,7 +121,7 @@ export default createMuiTheme({
     },
     MuiFormControlLabel: {
       label: {
-        color: arcBlue,
+        color: pink,
         fontWeight: 700,
       },
       labelPlacementStart: {
@@ -130,7 +130,7 @@ export default createMuiTheme({
     },
     MuiInputLabel: {
       root: {
-        color: arcBlue,
+        color: pink,
         fontSize: '1rem',
       },
     },
@@ -141,10 +141,10 @@ export default createMuiTheme({
       },
       underline: {
         '&:before': {
-          borderBottom: `2px solid ${arcBlue}`,
+          borderBottom: `2px solid ${pink}`,
         },
         '&:hover:not($disabled):not($focused):not($error):before': {
-          borderBottom: `2px solid ${arcBlue}`,
+          borderBottom: `2px solid ${pink}`,
         },
       },
     },

@@ -29,6 +29,7 @@ import { format } from 'date-fns';
 import EnhancedTable from '../ui/EnhancedTable';
 import useMediaQuery from '@material-ui/core/useMediaQuery';
 import Hidden from '@material-ui/core/Hidden';
+// import Switches from '../ui/Switches.js';
 
 const useStyles = makeStyles((theme) => ({
   service: {
@@ -66,11 +67,11 @@ export default function ProjectManager() {
   const classes = useStyles();
   const theme = useTheme();
   const [rows, setRows] = useState([
-    createData('Zachary Reece', '11/2/19', 'Website', 'E-Commerce', 'N/A', 'N/A', 'N/A', '$1500', true),
+    createData('Zachary Reece', '11/2/19', 'Get Jobs', 'E-Commerce', 'N/A', 'N/A', 'N/A', '$1500', true),
     createData(
       'Bill Gates',
       '10/17/19',
-      'Custom Software',
+      'Get Jobs',
       'GPS, Push Notifications, Users/Authentication, File Transfer',
       'Medium',
       'Web Application',
@@ -100,6 +101,7 @@ export default function ProjectManager() {
       '$1250',
       true
     ),
+
     createData(
       'Albert Einstein',
       '2/13/19',
@@ -122,11 +124,11 @@ export default function ProjectManager() {
     'Biometrics',
     'Push Notifications',
   ];
-  var websiteOptions = ['Basic', 'Interactive', 'E-Commerce'];
+  var getJobOptions = ['Basic', 'Interactive', 'E-Commerce'];
 
-  const [websiteChecked, setWebsiteChecked] = useState(false);
-  const [iOSChecked, setiOSChecked] = useState(false);
-  const [androidChecked, setAndroidChecked] = useState(false);
+  const [jobChecked, setJobChecked] = useState(false);
+  const [personalProjectsChecked, setPersonalProjectsChecked] = useState(false);
+  const [andesFreelanceChecked, setAndesFreelanceChecked] = useState(false);
   const [softwareChecked, setSoftwareChecked] = useState(false);
   const [dialogOpen, setDialogOpen] = useState(false);
   const [name, setName] = useState('');
@@ -150,9 +152,9 @@ export default function ProjectManager() {
         format(date, 'MM/dd/yy'),
         service,
         features.join(', '),
-        service === 'Website' ? 'N/A' : complexity,
-        service === 'Website' ? 'N/A' : platforms.join(', '),
-        service === 'Website' ? 'N/A' : users,
+        service === 'Get Job' ? 'N/A' : complexity,
+        service === 'Get Job' ? 'N/A' : platforms.join(', '),
+        service === 'Get Job' ? 'N/A' : users,
         `$${total}`,
         true
       ),
@@ -201,7 +203,7 @@ export default function ProjectManager() {
             setFeatures([]);
           }}
         >
-          <FormControlLabel classes={{ label: classes.service }} value="Website" label="Website" control={<Radio />} />
+          <FormControlLabel classes={{ label: classes.service }} value="Get Job" label="Get Job" control={<Radio />} />
           <FormControlLabel
             classes={{ label: classes.service }}
             value="Mobile App"
@@ -233,21 +235,21 @@ export default function ProjectManager() {
             onChange={(event) => setComplexity(event.target.value)}
           >
             <FormControlLabel
-              disabled={service === 'Website'}
+              disabled={service === 'Get Job'}
               classes={{ label: classes.service }}
               value="Low"
               label="Low"
               control={<Radio />}
             />
             <FormControlLabel
-              disabled={service === 'Website'}
+              disabled={service === 'Get Job'}
               classes={{ label: classes.service }}
               value="Medium"
               label="Medium"
               control={<Radio />}
             />
             <FormControlLabel
-              disabled={service === 'Website'}
+              disabled={service === 'Get Job'}
               classes={{ label: classes.service }}
               value="High"
               label="High"
@@ -268,7 +270,7 @@ export default function ProjectManager() {
         <Grid item>
           <RadioGroup aria-label="users" name="users" value={users} onChange={(event) => setUsers(event.target.value)}>
             <FormControlLabel
-              disabled={service === 'Website'}
+              disabled={service === 'Get Job'}
               classes={{
                 label: classes.service,
                 root: classes.users,
@@ -278,7 +280,7 @@ export default function ProjectManager() {
               control={<Radio />}
             />
             <FormControlLabel
-              disabled={service === 'Website'}
+              disabled={service === 'Get Job'}
               classes={{
                 label: classes.service,
                 root: classes.users,
@@ -288,7 +290,7 @@ export default function ProjectManager() {
               control={<Radio />}
             />
             <FormControlLabel
-              disabled={service === 'Website'}
+              disabled={service === 'Get Job'}
               classes={{
                 label: classes.service,
                 root: classes.users,
@@ -327,28 +329,15 @@ export default function ProjectManager() {
             }}
           />
         </Grid>
+
         <Grid item style={{ marginLeft: matchesSM ? 0 : '5em', marginTop: '2em' }}>
           <FormGroup row>
             <Grid container direction={matchesSM ? 'column' : 'row'} justify={matchesSM ? 'center' : undefined}>
               <Grid item>
                 <FormControlLabel
                   style={{ marginRight: matchesSM ? 0 : '5em' }}
-                  control={
-                    <Switch
-                      checked={websiteChecked}
-                      color="primary"
-                      onChange={() => setWebsiteChecked(!websiteChecked)}
-                    />
-                  }
-                  label="Websites"
-                  labelPlacement={matchesSM ? 'end' : 'start'}
-                />
-              </Grid>
-              <Grid item>
-                <FormControlLabel
-                  style={{ marginRight: matchesSM ? 0 : '5em' }}
-                  control={<Switch checked={iOSChecked} color="primary" onChange={() => setiOSChecked(!iOSChecked)} />}
-                  label="iOS Apps"
+                  control={<Switch checked={jobChecked} color="primary" onChange={() => setJobChecked(!jobChecked)} />}
+                  label="Get Jobs"
                   labelPlacement={matchesSM ? 'end' : 'start'}
                 />
               </Grid>
@@ -357,12 +346,26 @@ export default function ProjectManager() {
                   style={{ marginRight: matchesSM ? 0 : '5em' }}
                   control={
                     <Switch
-                      checked={androidChecked}
+                      checked={personalProjectsChecked}
                       color="primary"
-                      onChange={() => setAndroidChecked(!androidChecked)}
+                      onChange={() => setPersonalProjectsChecked(!personalProjectsChecked)}
                     />
                   }
-                  label="Android Apps"
+                  label="Personal Projects"
+                  labelPlacement={matchesSM ? 'end' : 'start'}
+                />
+              </Grid>
+              <Grid item>
+                <FormControlLabel
+                  style={{ marginRight: matchesSM ? 0 : '5em' }}
+                  control={
+                    <Switch
+                      checked={andesFreelanceChecked}
+                      color="primary"
+                      onChange={() => setAndesFreelanceChecked(!andesFreelanceChecked)}
+                    />
+                  }
+                  label="Andes Freelance"
                   labelPlacement={matchesSM ? 'end' : 'start'}
                 />
               </Grid>
@@ -395,9 +398,9 @@ export default function ProjectManager() {
             setRows={setRows}
             page={page}
             setPage={setPage}
-            websiteChecked={websiteChecked}
-            iOSChecked={iOSChecked}
-            androidChecked={androidChecked}
+            jobChecked={jobChecked}
+            personalProjectsChecked={personalProjectsChecked}
+            andesFreelanceChecked={andesFreelanceChecked}
             softwareChecked={softwareChecked}
           />
         </Grid>
@@ -439,7 +442,7 @@ export default function ProjectManager() {
                       <Select
                         labelId="platforms"
                         id="platforms"
-                        disabled={service === 'Website'}
+                        disabled={service === 'Get Job'}
                         multiple
                         style={{ width: matchesSM ? 250 : '12em' }}
                         displayEmpty
@@ -498,7 +501,7 @@ export default function ProjectManager() {
                       value={features}
                       onChange={(event) => setFeatures(event.target.value)}
                     >
-                      {service === 'Website' ? (featureOptions = websiteOptions) : null}
+                      {service === 'Get Job' ? (featureOptions = getJobOptions) : null}
                       {featureOptions.map((option) => (
                         <MenuItem key={option} value={option}>
                           {option}
@@ -521,7 +524,7 @@ export default function ProjectManager() {
                   className={classes.button}
                   onClick={addProject}
                   disabled={
-                    service === 'Website'
+                    service === 'Get Job'
                       ? name.length === 0 || total.length === 0 || features.length === 0 || features.length > 1
                       : name.length === 0 ||
                         total.length === 0 ||
