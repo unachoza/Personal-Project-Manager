@@ -97,6 +97,7 @@ export default createMuiTheme({
         color: arcGrey,
         borderColor: pink,
         borderWidth: 2,
+        fontSize: '1rem',
       },
     },
     MuiTableSortLabel: {

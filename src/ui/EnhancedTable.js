@@ -409,7 +409,7 @@ export default function EnhancedTable(props) {
   const isSelected = (name) => selected.indexOf(name) !== -1;
 
   const switchFilters = () => {
-    const { getJobChecked, personalProjectsChecked, andesFreelanceChecked, softwareChecked } = props;
+    const { getJobChecked, personalProjectsChecked, andesFreelanceChecked, studyChecked } = props;
 
     const getJobs = props.rows.filter((row) => (getJobChecked ? row.service === 'Get Job' : null));
 
@@ -421,16 +421,16 @@ export default function EnhancedTable(props) {
       andesFreelanceChecked ? row.platforms.includes('Andes Freelance') : null
     );
 
-    const softwareApps = props.rows.filter((row) => (softwareChecked ? row.service === 'Custom Software' : null));
+    const studys = props.rows.filter((row) => (studyChecked ? row.service === 'Study' : null));
 
-    if (!getJobChecked && !personalProjectsChecked && !andesFreelanceChecked && !softwareChecked) {
+    if (!getJobChecked && !personalProjectsChecked && !andesFreelanceChecked && !studyChecked) {
       return props.rows;
     } else {
       let newRows = getJobs.concat(personalProjects.filter((item) => getJobs.indexOf(item) < 0));
 
       let newRows2 = newRows.concat(andesFreelances.filter((item) => newRows.indexOf(item) < 0));
 
-      let newRows3 = newRows2.concat(softwareApps.filter((item) => newRows2.indexOf(item) < 0));
+      let newRows3 = newRows2.concat(studys.filter((item) => newRows2.indexOf(item) < 0));
 
       return newRows3;
     }

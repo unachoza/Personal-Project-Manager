@@ -41,29 +41,37 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-function createData(name, date, service, features, complexity, platforms, users, total, search) {
-  return {
-    name,
-    date,
-    service,
-    features,
-    complexity,
-    platforms,
-    users,
-    total,
-    search,
-  };
-}
+const createData = (name, date, service, features, complexity, platforms, users, total, search) => ({
+  name,
+  date,
+  service,
+  features,
+  complexity,
+  platforms,
+  users,
+  total,
+  search,
+});
 
 export default function ProjectManager() {
   const classes = useStyles();
   const theme = useTheme();
   const [rows, setRows] = useState([
-    createData('Zachary Reece', '11/2/19', 'Get Jobs', 'E-Commerce', 'N/A', 'N/A', 'N/A', '$1500', true),
+    createData(
+      'Reece Witherspoon',
+      '11/2/20',
+      'Personal Projects',
+      'E-Commerce',
+      'High',
+      'N/A',
+      '10-100',
+      '$15000',
+      true
+    ),
     createData(
       'Bill Gates',
       '10/17/19',
-      'Get Jobs',
+      'Get Job',
       'GPS, Push Notifications, Users/Authentication, File Transfer',
       'Medium',
       'Web Application',
@@ -74,7 +82,7 @@ export default function ProjectManager() {
     createData(
       'Steve Jobs',
       '2/13/19',
-      'Custom Software',
+      'Study',
       'Photo/Video, File Transfer, Users/Authentication',
       'Low',
       'Web Application',
@@ -85,7 +93,7 @@ export default function ProjectManager() {
     createData(
       'Stan Smith',
       '2/13/19',
-      'Mobile App',
+      'Andes Freelance',
       'Photo/Video, File Transfer, Users/Authentication',
       'Low',
       'iOS, Android',
@@ -97,7 +105,7 @@ export default function ProjectManager() {
     createData(
       'Albert Einstein',
       '2/13/19',
-      'Mobile App',
+      'Personal Projects',
       'Photo/Video, File Transfer, Users/Authentication',
       'Low',
       'Android',
@@ -121,7 +129,8 @@ export default function ProjectManager() {
   const [jobChecked, setJobChecked] = useState(false);
   const [personalProjectsChecked, setPersonalProjectsChecked] = useState(false);
   const [andesFreelanceChecked, setAndesFreelanceChecked] = useState(false);
-  const [softwareChecked, setSoftwareChecked] = useState(false);
+  const [studyChecked, setStudyChecked] = useState(false);
+  const [completedChecked, setCompletedChecked] = useState(false);
   const [dialogOpen, setDialogOpen] = useState(false);
   const [name, setName] = useState('');
   const [date, setDate] = useState(new Date());
@@ -202,12 +211,7 @@ export default function ProjectManager() {
             label="Mobile App"
             control={<Radio />}
           />
-          <FormControlLabel
-            classes={{ label: classes.service }}
-            value="Custom Software"
-            label="Custom Software"
-            control={<Radio />}
-          />
+          <FormControlLabel classes={{ label: classes.service }} value="Study" label="Study" control={<Radio />} />
         </RadioGroup>
       </Grid>
     </React.Fragment>
@@ -363,14 +367,24 @@ export default function ProjectManager() {
               </Grid>
               <Grid item>
                 <FormControlLabel
+                  style={{ marginRight: matchesSM ? 0 : '5em' }}
+                  control={
+                    <Switch checked={studyChecked} color="primary" onChange={() => setStudyChecked(!studyChecked)} />
+                  }
+                  label="Study"
+                  labelPlacement={matchesSM ? 'end' : 'start'}
+                />
+              </Grid>
+              <Grid item>
+                <FormControlLabel
                   control={
                     <Switch
-                      checked={softwareChecked}
+                      checked={completedChecked}
                       color="primary"
-                      onChange={() => setSoftwareChecked(!softwareChecked)}
+                      onChange={() => setCompletedChecked(!completedChecked)}
                     />
                   }
-                  label="Custom Software"
+                  label="Completed"
                   labelPlacement={matchesSM ? 'end' : 'start'}
                 />
               </Grid>
@@ -393,7 +407,8 @@ export default function ProjectManager() {
             jobChecked={jobChecked}
             personalProjectsChecked={personalProjectsChecked}
             andesFreelanceChecked={andesFreelanceChecked}
-            softwareChecked={softwareChecked}
+            studyChecked={studyChecked}
+            completedChecked={completedChecked}
           />
         </Grid>
         <Dialog
