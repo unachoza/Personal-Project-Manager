@@ -380,9 +380,9 @@ export default function ProjectManager() {
         <Grid
           item
           style={{
-            marginTop: '5em',
+            marginTop: '1em',
             maxWidth: '100%',
-            marginBottom: matchesMD ? '40em' : '35em',
+            marginBottom: matchesMD ? '5em' : '3em',
           }}
         >
           <EnhancedTable

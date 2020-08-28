@@ -329,6 +329,9 @@ const useStyles = makeStyles((theme) => ({
     width: '100%',
   },
   paper: {
+    borderRadius: '8px',
+    boxShadow: '0 0.5rem 1rem rgba(0, 0, 0, 0.2)',
+    padding: '13px',
     width: '100%',
     marginBottom: theme.spacing(2),
   },

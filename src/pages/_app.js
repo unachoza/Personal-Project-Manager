@@ -22,7 +22,7 @@ export default class MyApp extends App {
     return (
       <React.Fragment>
         <Head>
-          <title>My page</title>
+          <title>Project Management</title>
         </Head>
         <ThemeProvider theme={theme}>
           <CssBaseline />
