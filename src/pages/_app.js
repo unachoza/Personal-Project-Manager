@@ -28,6 +28,7 @@ export default class MyApp extends App {
           <CssBaseline />
           <Header />
           <Component {...pageProps} />
+          <Footer />
         </ThemeProvider>
       </React.Fragment>
     );

@@ -1,20 +1,20 @@
 import { createMuiTheme } from '@material-ui/core/styles';
 
-const pink = '##AD1457';
-const arcOrange = '##006064';
+const pink = '#AD1457';
+const turquiose = '#006064';
 const arcGrey = '#868686';
 
 export default createMuiTheme({
   palette: {
     common: {
       blue: pink,
-      orange: arcOrange,
+      orange: turquiose,
     },
     primary: {
       main: pink,
     },
     secondary: {
-      main: arcOrange,
+      main: turquiose,
     },
   },
   typography: {
@@ -102,20 +102,20 @@ export default createMuiTheme({
     MuiTableSortLabel: {
       root: {
         '&:hover': {
-          color: arcOrange,
+          color: turquiose,
         },
         '&.MuiTableSortLabel-active': {
-          color: arcOrange,
+          color: turquiose,
         },
       },
       icon: {
-        fill: arcOrange,
+        fill: turquiose,
       },
     },
     MuiSvgIcon: {
       root: {
         '&.MuiSelect-icon': {
-          fill: arcOrange,
+          fill: turquiose,
         },
       },
     },
