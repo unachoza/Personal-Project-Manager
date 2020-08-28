@@ -207,8 +207,14 @@ export default function ProjectManager() {
           <FormControlLabel classes={{ label: classes.service }} value="Get Job" label="Get Job" control={<Radio />} />
           <FormControlLabel
             classes={{ label: classes.service }}
-            value="Mobile App"
-            label="Mobile App"
+            value="Personal Projects"
+            label="Personal Projects"
+            control={<Radio />}
+          />
+          <FormControlLabel
+            classes={{ label: classes.service }}
+            value="Andes Freelance"
+            label="Andes Freelance"
             control={<Radio />}
           />
           <FormControlLabel classes={{ label: classes.service }} value="Study" label="Study" control={<Radio />} />
@@ -230,27 +236,10 @@ export default function ProjectManager() {
             value={complexity}
             onChange={(event) => setComplexity(event.target.value)}
           >
-            <FormControlLabel
-              disabled={service === 'Get Job'}
-              classes={{ label: classes.service }}
-              value="Low"
-              label="Low"
-              control={<Radio />}
-            />
-            <FormControlLabel
-              disabled={service === 'Get Job'}
-              classes={{ label: classes.service }}
-              value="Medium"
-              label="Medium"
-              control={<Radio />}
-            />
-            <FormControlLabel
-              disabled={service === 'Get Job'}
-              classes={{ label: classes.service }}
-              value="High"
-              label="High"
-              control={<Radio />}
-            />
+            <FormControlLabel classes={{ label: classes.service }} value="Low" label="Low" control={<Radio />} />
+            <FormControlLabel classes={{ label: classes.service }} value="Medium" label="Medium" control={<Radio />} />
+            <FormControlLabel classes={{ label: classes.service }} value="High" label="High" control={<Radio />} />
+            <FormControlLabel classes={{ label: classes.service }} value="Ultra" label="Ultra" control={<Radio />} />
           </RadioGroup>
         </Grid>
       </Grid>
@@ -271,8 +260,8 @@ export default function ProjectManager() {
                 label: classes.service,
                 root: classes.users,
               }}
-              value="0-10"
-              label="0-10"
+              value="0 - 10"
+              label="0 - 10"
               control={<Radio />}
             />
             <FormControlLabel
@@ -281,8 +270,8 @@ export default function ProjectManager() {
                 label: classes.service,
                 root: classes.users,
               }}
-              value="10-100"
-              label="10-100"
+              value="10 - 100"
+              label="10 - 100"
               control={<Radio />}
             />
             <FormControlLabel
@@ -291,8 +280,18 @@ export default function ProjectManager() {
                 label: classes.service,
                 root: classes.users,
               }}
-              value="100+"
-              label="100+"
+              value="100 - 500"
+              label="100 - 500"
+              control={<Radio />}
+            />
+            <FormControlLabel
+              disabled={service === 'Get Job'}
+              classes={{
+                label: classes.service,
+                root: classes.users,
+              }}
+              value="infinite / unknown"
+              label="infinite / unknown"
               control={<Radio />}
             />
           </RadioGroup>
