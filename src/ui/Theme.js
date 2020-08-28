@@ -137,7 +137,7 @@ export default createMuiTheme({
     },
     MuiInput: {
       root: {
-        color: arcGrey,
+        width: '90%',
         fontWeight: 300,
       },
       underline: {

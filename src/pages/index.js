@@ -191,7 +191,7 @@ export default function ProjectManager() {
 
   const serviceQuestions = (
     <React.Fragment>
-      <Grid item style={{ marginTop: matchesSM ? 20 : '5em' }}>
+      <Grid item style={{ marginTop: matchesSM ? 20 : '2em' }}>
         <Typography variant="h4">Service</Typography>
       </Grid>
       <Grid item>
@@ -219,7 +219,7 @@ export default function ProjectManager() {
 
   const complexityQuestions = (
     <Grid item style={{ marginBottom: matchesSM ? 50 : null }}>
-      <Grid item container direction="column" style={{ marginTop: matchesSM ? 50 : '5em' }}>
+      <Grid item container direction="column" style={{ marginTop: matchesSM ? 50 : '2em' }}>
         <Grid item>
           <Typography variant="h4">Complexity</Typography>
         </Grid>
@@ -259,7 +259,7 @@ export default function ProjectManager() {
 
   const userQuestions = (
     <Grid item style={{ alignSelf: matchesSM ? 'center' : 'flex-end' }}>
-      <Grid item container direction="column" style={{ marginTop: matchesSM ? 50 : '5em' }}>
+      <Grid item container direction="column" style={{ marginTop: matchesSM ? 50 : '2em' }}>
         <Grid item>
           <Typography variant="h4">Users</Typography>
         </Grid>
@@ -304,7 +304,7 @@ export default function ProjectManager() {
   return (
     <MuiPickersUtilsProvider utils={DateFnsUtils} style={{ zindex: 20 }}>
       <Grid container direction="column" alignItems={matchesSM ? 'center' : undefined}>
-        <Grid item style={{ marginTop: '2em', marginLeft: matchesSM ? 0 : '5em' }}>
+        <Grid item style={{ marginTop: '2em', marginLeft: matchesSM ? 0 : '2em' }}>
           <Typography variant="h1">Projects</Typography>
         </Grid>
         <Grid item>
@@ -412,7 +412,6 @@ export default function ProjectManager() {
           />
         </Grid>
         <Dialog
-          fullWidth
           maxWidth="md"
           open={dialogOpen}
           fullScreen={matchesSM}
@@ -445,7 +444,7 @@ export default function ProjectManager() {
                   </Grid>
                   <Grid item container direction="column" alignItems={matchesSM ? 'center' : undefined}>
                     <Hidden smDown>{serviceQuestions}</Hidden>
-                    <Grid item style={{ marginTop: matchesSM ? 50 : '5em' }}>
+                    <Grid item style={{ marginTop: matchesSM ? 50 : '2em' }}>
                       <Select
                         labelId="platforms"
                         id="platforms"
@@ -496,7 +495,7 @@ export default function ProjectManager() {
                   </Grid>
                   <Hidden smDown>{userQuestions}</Hidden>
 
-                  <Grid item style={{ marginTop: matchesSM ? 50 : '5em' }}>
+                  <Grid item style={{ marginTop: matchesSM ? 50 : '2em' }}>
                     <Select
                       labelId="features"
                       style={{ width: matchesSM ? 250 : '12em' }}
