@@ -41,16 +41,17 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-const createData = (name, date, service, features, complexity, platforms, users, total, search) => ({
-  name,
-  date,
-  service,
-  features,
-  complexity,
-  platforms,
-  users,
-  total,
-  search,
+const createData = (array, singleLL, doubleLL, tree, trie, graph, stacks, queues, heaps, hashTables) => ({
+  array,
+  singleLL,
+  doubleLL,
+  tree,
+  trie,
+  graph,
+  stacks,
+  queues,
+  heaps,
+  hashTables,
 });
 
 export default function ProjectManager() {
@@ -91,6 +92,17 @@ export default function ProjectManager() {
       true
     ),
     createData(
+      'Jobbins',
+      '2/13/19',
+      'Study',
+      'Photo/Video, File Transfer, Users/Authentication',
+      'Low',
+      'Web Application',
+      '10-100',
+      '$1250',
+      true
+    ),
+    createData(
       'Stan Smith',
       '2/13/19',
       'Andes Freelance',
@@ -107,7 +119,7 @@ export default function ProjectManager() {
       '2/13/19',
       'Personal Projects',
       'Photo/Video, File Transfer, Users/Authentication',
-      'Low',
+      'Ultra',
       'Android',
       '10-100',
       '$1250',
@@ -121,8 +133,9 @@ export default function ProjectManager() {
     'GPS',
     'File Transfer',
     'Users/Authentication',
-    'Biometrics',
     'Push Notifications',
+    'Database',
+    'Data Science',
   ];
   var getJobOptions = ['Basic', 'Interactive', 'E-Commerce'];
 
@@ -433,7 +446,7 @@ export default function ProjectManager() {
                   <Hidden mdUp>{complexityQuestions}</Hidden>
                   <Grid item>
                     <TextField
-                      label="Name"
+                      label="Client Name"
                       style={{ width: matchesSM ? 250 : undefined }}
                       fullWidth={!matchesSM}
                       id="name"
@@ -449,7 +462,7 @@ export default function ProjectManager() {
                         id="platforms"
                         disabled={service === 'Get Job'}
                         multiple
-                        style={{ width: matchesSM ? 250 : '12em' }}
+                        style={{ width: matchesSM ? 250 : '10em' }}
                         displayEmpty
                         renderValue={platforms.length > 0 ? undefined : () => 'Platforms'}
                         value={platforms}
@@ -497,7 +510,7 @@ export default function ProjectManager() {
                   <Grid item style={{ marginTop: matchesSM ? 50 : '2em' }}>
                     <Select
                       labelId="features"
-                      style={{ width: matchesSM ? 250 : '12em' }}
+                      style={{ width: matchesSM ? 250 : '10em' }}
                       MenuProps={{ style: { zIndex: 1302 } }}
                       id="features"
                       multiple
@@ -517,7 +530,7 @@ export default function ProjectManager() {
                 </Grid>
               </Grid>
             </Grid>
-            <Grid container justify="center" style={{ marginTop: '3em' }}>
+            <Grid container justify="center" style={{ margin: '1em 0' }}>
               <Grid item>
                 <Button onClick={() => setDialogOpen(false)} color="primary" style={{ fontWeight: 300 }}>
                   Cancel

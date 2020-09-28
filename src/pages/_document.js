@@ -16,6 +16,10 @@ export default class MyDocument extends Document {
             rel="stylesheet"
             href="https://fonts.googleapis.com/css?family=Raleway:100,400,400i,700|Roboto:300,400,500,700&display=swap"
           />
+          <link
+            rel="shortcut icon"
+            href="https://res.cloudinary.com/dh41vh9dx/image/upload/v1598624726/100favicon-32x32.png"
+          />
         </Head>
         <body style={{ backgroundColor: '#fff' }}>
           <Main />
