@@ -41,17 +41,16 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-const createData = (array, singleLL, doubleLL, tree, trie, graph, stacks, queues, heaps, hashTables) => ({
-  array,
-  singleLL,
-  doubleLL,
-  tree,
-  trie,
-  graph,
-  stacks,
-  queues,
-  heaps,
-  hashTables,
+const createData = (name, date, service, features, complexity, platforms, users, total, search) => ({
+  name,
+  date,
+  service,
+  features,
+  complexity,
+  platforms,
+  users,
+  total,
+  search,
 });
 
 export default function ProjectManager() {
