@@ -3,7 +3,7 @@ import App from 'next/app';
 import Head from 'next/head';
 import { ThemeProvider } from '@material-ui/core/styles';
 import CssBaseline from '@material-ui/core/CssBaseline';
-import theme from '../ui/theme';
+import theme from '../ui/Theme';
 import Header from '../ui/Header';
 import Footer from '../ui/Footer';
 
