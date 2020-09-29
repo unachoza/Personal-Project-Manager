@@ -44,7 +44,7 @@ export default function ProjectManager() {
     createData('Stable', 'yes', '', '', '', '', '', ''),
     createData('Hierarchical', 'no', '', '', '', '', '', ''),
     createData('Allows Duplicates', 'yes', '', '', '', '', '', ''),
-    createData('Has Value', '', '', 'yes', '', '', '', ''),
+    createData('Has Value', 'yes', '', '', '', '', '', ''),
     createData('Has Reference to Other Nodes', 'no', '', '', '', '', '', ''),
     createData('Node Can Contain Information', 'no', '', '', '', '', '', ''),
     createData('Node Can Only Point To Child (Not Root Or Parent', 'no', '', '', '', '', '', ''),
