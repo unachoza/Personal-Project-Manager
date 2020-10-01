@@ -85,15 +85,13 @@ export default function EnhancedLittle(props) {
                 const labelId = `enhanced-table-checkbox-${index}`;
                 return (
                   <TableRow hover role="checkbox" tabIndex={-1} key={row.name}>
-                    <TableCell align="center" component="th" id={labelId} scope="row" padding="none">
+                    <TableCell align="left" component="th" id={labelId} scope="row" marginLeft="50">
                       {row.attribute}
                     </TableCell>
                     <TableCell align="center">{row.array}</TableCell>
                     <TableCell align="center">{row.singleLL}</TableCell>
                     <TableCell align="center">{row.doubleLL}</TableCell>
-                    <TableCell align="center" style={{ width: '5em' }}>
-                      {row.tree}
-                    </TableCell>
+                    <TableCell align="center">{row.tree}</TableCell>
                     <TableCell align="center">{row.trie}</TableCell>
                     <TableCell align="center">{row.graph}</TableCell>
                     <TableCell align="center">{row.stack}</TableCell>

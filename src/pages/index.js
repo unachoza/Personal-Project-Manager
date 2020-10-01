@@ -316,7 +316,7 @@ export default function ProjectManager() {
     <MuiPickersUtilsProvider utils={DateFnsUtils} style={{ zindex: 20 }}>
       <Grid container direction="column" alignItems={matchesSM ? 'center' : undefined}>
         <Grid item style={{ marginTop: '2em', marginLeft: matchesSM ? 0 : '2em' }}>
-          <Typography variant="h1">Projects</Typography>
+          <Typography variant="h1">Projectssssss</Typography>
         </Grid>
         <Grid item>
           <TextField

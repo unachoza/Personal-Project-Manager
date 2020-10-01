@@ -6,20 +6,9 @@ import { format } from 'date-fns';
 import EnhancedLittle from '../ui/Enhancedlittle';
 
 const useStyles = makeStyles((theme) => ({
-  service: {
-    fontWeight: 300,
-  },
-  users: {
-    marginRight: 0,
-  },
-  button: {
-    color: '#fff',
-    backgroundColor: theme.palette.common.orange,
-    borderRadius: 50,
-    textTransform: 'none',
-    '&:hover': {
-      backgroundColor: theme.palette.secondary.light,
-    },
+  title: {
+    marginLeft: '80px',
+    fontSize: '50px',
   },
 }));
 
@@ -62,12 +51,14 @@ export default function ProjectManager() {
     createData('Priority', 'no', '', '', '', '', '', ''),
     createData('Linear', 'yes', '', '', '', '', '', ''),
     createData('Null Terminated', 'no', '', '', '', '', '', ''),
-    createData('Flexible Size', 'yes', '', '', '', '', '', ''),
+    createData('Flexible Sizesssss', 'yes', '', '', '', '', '', ''),
   ]);
 
   return (
     <Grid container direction="column" alignItems>
-      <Typography variant="h1">Data Structures</Typography>
+      <Typography className={classes.title} variant="h1">
+        Data Structures
+      </Typography>
       <Grid
         item
         style={{
