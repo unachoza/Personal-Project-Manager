@@ -34,20 +34,65 @@ export default function ProjectManager() {
   const classes = useStyles();
   const theme = useTheme();
   const [rows, setRows] = useState([
-    createData('Stable', <FiberManualRecordIcon className={classes.icon} />, '', '', '', '', '', ''),
-    createData('Hierarchical', null, '', '', '', '', '', ''),
-    createData('Allows Duplicates', <FiberManualRecordIcon className={classes.icon} />, '', '', '', '', '', ''),
-    createData('Has Value', <FiberManualRecordIcon className={classes.icon} />, '', '', '', '', '', ''),
-    createData('Has Reference to Other Nodes', null, '', '', '', '', '', ''),
-    createData('Node Can Contain Information', null, '', '', '', '', '', ''),
-    createData('Node Can Only Point To Child (Not Root Or Parent', null, '', '', '', '', '', ''),
-    createData('One Enterance to Data Structure', null, '', '', '', '', '', ''),
-    createData('Weighted Relationships', null, '', '', '', '', '', ''),
+    createData('Stable', <FiberManualRecordIcon className={classes.icon} />, null, null, '', '', '', ''),
+    createData('Hierarchical', null, null, null, '', '', '', ''),
     createData(
-      'Unweighted Relationships',
+      'Allows Duplicates',
+      <FiberManualRecordIcon className={classes.icon} />,
+      <FiberManualRecordIcon className={classes.icon} />,
       <FiberManualRecordIcon className={classes.icon} />,
       '',
       '',
+      '',
+      ''
+    ),
+    createData(
+      'Has Value',
+      <FiberManualRecordIcon className={classes.icon} />,
+      <FiberManualRecordIcon className={classes.icon} />,
+      <FiberManualRecordIcon className={classes.icon} />,
+      '',
+      '',
+      '',
+      ''
+    ),
+    createData(
+      'Has Reference to Other Nodes',
+      null,
+      <FiberManualRecordIcon className={classes.icon} />,
+      <FiberManualRecordIcon className={classes.icon} />,
+      '',
+      '',
+      '',
+      ''
+    ),
+    createData(
+      'Node Can Contain Information',
+      null,
+      <FiberManualRecordIcon className={classes.icon} />,
+      <FiberManualRecordIcon className={classes.icon} />,
+      '',
+      '',
+      '',
+      ''
+    ),
+    createData('Node Can Only Point To Child (Not Root Or Parent)', null, null, null, '', '', '', ''),
+    createData(
+      'One Enterance to Data Structure',
+      null,
+      <FiberManualRecordIcon className={classes.icon} />,
+      null,
+      '',
+      '',
+      '',
+      ''
+    ),
+    createData('Weighted Relationships', null, null, null, '', '', '', ''),
+    createData(
+      'Unweighted Relationships',
+      <FiberManualRecordIcon className={classes.icon} />,
+      <FiberManualRecordIcon className={classes.icon} />,
+      <FiberManualRecordIcon className={classes.icon} />,
       '',
       '',
       '',
@@ -55,18 +100,54 @@ export default function ProjectManager() {
       '',
       ''
     ),
-    createData('Asyclic Relationships', null, '', '', '', '', '', ''),
-    createData('Cyclic Relationships', null, '', '', '', '', '', ''),
-    createData('Directed Relationships', null, '', '', '', '', '', ''),
-    createData('Undirected Relationships', null, '', '', '', '', '', ''),
-    createData('Preserves Relationships', null, '', '', '', '', '', ''),
-    createData('Can Only Have Two Children', null, '', '', '', '', '', ''),
-    createData('Sorted Data', <FiberManualRecordIcon className={classes.icon} />, '', '', '', '', '', ''),
-    createData('Unsorted Data', <FiberManualRecordIcon className={classes.icon} />, '', '', '', '', '', ''),
-    createData('Priority', null, '', '', '', '', '', ''),
-    createData('Linear', <FiberManualRecordIcon className={classes.icon} />, '', '', '', '', '', ''),
-    createData('Null Terminated', null, '', '', '', '', '', ''),
-    createData('Flexible Sizesssss', <FiberManualRecordIcon className={classes.icon} />, '', '', '', '', '', ''),
+    createData('Asyclic Relationships', null, <FiberManualRecordIcon className={classes.icon} />, null, '', '', '', ''),
+    createData('Cyclic Relationships', null, null, null, '', '', '', ''),
+    createData(
+      'Directed Relationships',
+      null,
+      <FiberManualRecordIcon className={classes.icon} />,
+      <FiberManualRecordIcon className={classes.icon} />,
+      '',
+      '',
+      '',
+      ''
+    ),
+    createData('Undirected Relationships', null, null, null, '', '', '', ''),
+    createData('Preserves Relationships', null, null, null, '', '', '', ''),
+    createData('Can Only Have Two Children', null, null, null, '', '', '', ''),
+    createData('Sorted Data', <FiberManualRecordIcon className={classes.icon} />, null, null, '', '', '', ''),
+    createData(
+      'Unsorted Data',
+      <FiberManualRecordIcon className={classes.icon} />,
+      <FiberManualRecordIcon className={classes.icon} />,
+      <FiberManualRecordIcon className={classes.icon} />,
+      '',
+      '',
+      '',
+      ''
+    ),
+    createData('Priority', null, null, null, '', '', '', ''),
+    createData(
+      'Linear',
+      <FiberManualRecordIcon className={classes.icon} />,
+      <FiberManualRecordIcon className={classes.icon} />,
+      <FiberManualRecordIcon className={classes.icon} />,
+      '',
+      '',
+      '',
+      ''
+    ),
+    createData('Null Terminated', null, null, null, '', '', '', ''),
+    createData(
+      'Flexible Sizes',
+      <FiberManualRecordIcon className={classes.icon} />,
+      <FiberManualRecordIcon className={classes.icon} />,
+      <FiberManualRecordIcon className={classes.icon} />,
+      '',
+      '',
+      '',
+      ''
+    ),
   ]);
 
   return (
