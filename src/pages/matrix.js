@@ -4,11 +4,15 @@ import Typography from '@material-ui/core/Typography';
 import { makeStyles, useTheme } from '@material-ui/core/styles';
 import { format } from 'date-fns';
 import EnhancedLittle from '../ui/Enhancedlittle';
+import FiberManualRecordIcon from '@material-ui/icons/FiberManualRecord';
 
 const useStyles = makeStyles((theme) => ({
   title: {
     marginLeft: '80px',
     fontSize: '50px',
+  },
+  icon: {
+    color: 'green',
   },
 }));
 
@@ -30,28 +34,39 @@ export default function ProjectManager() {
   const classes = useStyles();
   const theme = useTheme();
   const [rows, setRows] = useState([
-    createData('Stable', 'yes', '', '', '', '', '', ''),
-    createData('Hierarchical', 'no', '', '', '', '', '', ''),
-    createData('Allows Duplicates', 'yes', '', '', '', '', '', ''),
-    createData('Has Value', 'yes', '', '', '', '', '', ''),
-    createData('Has Reference to Other Nodes', 'no', '', '', '', '', '', ''),
-    createData('Node Can Contain Information', 'no', '', '', '', '', '', ''),
-    createData('Node Can Only Point To Child (Not Root Or Parent', 'no', '', '', '', '', '', ''),
-    createData('One Enterance to Data Structure', 'no', '', '', '', '', '', ''),
-    createData('Weighted Relationships', 'no', '', '', '', '', '', ''),
-    createData('Unweighted Relationships', 'no', '', '', '', '', '', '', '', ''),
-    createData('Asyclic Relationships', 'no', '', '', '', '', '', ''),
-    createData('Cyclic Relationships', 'no', '', '', '', '', '', ''),
-    createData('Directed Relationships', 'no', '', '', '', '', '', ''),
-    createData('Undirected Relationships', 'no', '', '', '', '', '', ''),
-    createData('Preserves Relationships', 'no', '', '', '', '', '', ''),
-    createData('Can Only Have Two Children', 'no', '', '', '', '', '', ''),
-    createData('Sorted Data', 'yes', '', '', '', '', '', ''),
-    createData('Unsorted Data', 'yes', '', '', '', '', '', ''),
-    createData('Priority', 'no', '', '', '', '', '', ''),
-    createData('Linear', 'yes', '', '', '', '', '', ''),
-    createData('Null Terminated', 'no', '', '', '', '', '', ''),
-    createData('Flexible Sizesssss', 'yes', '', '', '', '', '', ''),
+    createData('Stable', <FiberManualRecordIcon className={classes.icon} />, '', '', '', '', '', ''),
+    createData('Hierarchical', null, '', '', '', '', '', ''),
+    createData('Allows Duplicates', <FiberManualRecordIcon className={classes.icon} />, '', '', '', '', '', ''),
+    createData('Has Value', <FiberManualRecordIcon className={classes.icon} />, '', '', '', '', '', ''),
+    createData('Has Reference to Other Nodes', null, '', '', '', '', '', ''),
+    createData('Node Can Contain Information', null, '', '', '', '', '', ''),
+    createData('Node Can Only Point To Child (Not Root Or Parent', null, '', '', '', '', '', ''),
+    createData('One Enterance to Data Structure', null, '', '', '', '', '', ''),
+    createData('Weighted Relationships', null, '', '', '', '', '', ''),
+    createData(
+      'Unweighted Relationships',
+      <FiberManualRecordIcon className={classes.icon} />,
+      '',
+      '',
+      '',
+      '',
+      '',
+      '',
+      '',
+      ''
+    ),
+    createData('Asyclic Relationships', null, '', '', '', '', '', ''),
+    createData('Cyclic Relationships', null, '', '', '', '', '', ''),
+    createData('Directed Relationships', null, '', '', '', '', '', ''),
+    createData('Undirected Relationships', null, '', '', '', '', '', ''),
+    createData('Preserves Relationships', null, '', '', '', '', '', ''),
+    createData('Can Only Have Two Children', null, '', '', '', '', '', ''),
+    createData('Sorted Data', <FiberManualRecordIcon className={classes.icon} />, '', '', '', '', '', ''),
+    createData('Unsorted Data', <FiberManualRecordIcon className={classes.icon} />, '', '', '', '', '', ''),
+    createData('Priority', null, '', '', '', '', '', ''),
+    createData('Linear', <FiberManualRecordIcon className={classes.icon} />, '', '', '', '', '', ''),
+    createData('Null Terminated', null, '', '', '', '', '', ''),
+    createData('Flexible Sizesssss', <FiberManualRecordIcon className={classes.icon} />, '', '', '', '', '', ''),
   ]);
 
   return (
